@@ -11,6 +11,11 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:#1A1916;color:#F0EBE3;font-family:'Jost',sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+/* On desktop, cap width to phone size */
+@media(min-width:500px){
+  .screen{max-width:390px;left:50%;transform:translateX(-50%);right:auto;width:390px;}
+  .screen.hidden{transform:translateX(-50%) translateY(12px);}
+}
 
 /* ── CSS vars ── */
 :root{
@@ -38,7 +43,7 @@ html,body{height:100%;background:#1A1916;color:#F0EBE3;font-family:'Jost',sans-s
 .cam-hint{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--taupe)}
 
 /* Video fills screen */
-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
 /* Viewfinder overlay */
 .vf-overlay{position:absolute;inset:0;pointer-events:none}
@@ -209,12 +214,27 @@ async function openStream(facing) {
   if (stream) { stream.getTracks().forEach(t => t.stop()); stream = null; }
   try {
     stream = await navigator.mediaDevices.getUserMedia({
-      video: { facingMode: { ideal: facing }, width: { ideal: 1280 }, height: { ideal: 1920 } },
+      video: {
+        facingMode: { ideal: facing },
+        width: { ideal: 1080 },
+        height: { ideal: 1920 },
+        aspectRatio: { ideal: 9/16 }
+      },
       audio: false
     });
     const vid = document.getElementById('video');
     vid.srcObject = stream;
     await vid.play();
+    // After play starts, check orientation and fix if landscape
+    vid.addEventListener('loadedmetadata', function() {
+      if (vid.videoWidth > vid.videoHeight) {
+        // Camera returned landscape — rotate 90deg and scale to fill
+        vid.style.transform = 'rotate(90deg) scale(' + (vid.videoWidth / vid.videoHeight) + ')';
+        vid.style.transformOrigin = 'center center';
+      } else {
+        vid.style.transform = '';
+      }
+    });
   } catch(e) {
     document.getElementById('cam-error').style.display='flex';
     document.getElementById('cam-hint').textContent = 'camera unavailable';
