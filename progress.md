@@ -1,0 +1,21 @@
+# Build progress
+
+- [x] Unified the full product prototype and DNA server
+- [x] Connected camera capture to the analysis API
+- [x] Added photo upload, camera switching, loading, and error states
+- [x] Added server validation and environment loading
+- [x] Added installable PWA metadata
+- [x] Connected captured outfits to Home, Profile, Fashion DNA, and saved counts
+- [x] Added persistent local state for profile, follows, messages, collections, and premium demo access
+- [x] Verified navigation and state rendering in the browser
+- [x] Added persistent demo sign-in and sign-out
+- [x] Reworked Home/Friends’ Traces navigation
+- [x] Added portrait capture and polaroid barcode receipt
+- [x] Reordered Twins around DNA and added Activity pricing reminder
+- [x] Integrated narrower image-first social traces directly into Home with more whitespace
+- [x] Kept primary navigation available throughout Camera and saved-receipt states
+- [x] Added circular DNA and Wrapped to Twins
+- [x] Reworked Saves and Backlog as numbered polaroid contact sheets
+- [ ] Add authentication and persistent storage
+- [ ] Replace remaining prototype data with live user data
+- [ ] Add native Capacitor projects and store assets
