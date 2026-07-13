@@ -318,7 +318,7 @@ html,body{height:100%;background:#1A1916;font-family:'Jost',sans-serif;-webkit-f
 .toast.show{opacity:1;}
 
   /* ── PLACEHOLDERS ── */
-  .img-ph{background:linear-gradient(145deg,#EFEFEF,#E0E0E0);display:block;}
+  .img-ph{background:linear-gradient(145deg,#F1F1F1 0%,#DADADA 100%);display:block;}
   /* sizing via parent context */
   .today-img-wrap .img-ph{width:100%;height:200px;}
   .trace-post-inner .img-ph{width:110px;height:140px;border-radius:8px;flex-shrink:0;}
@@ -327,8 +327,8 @@ html,body{height:100%;background:#1A1916;font-family:'Jost',sans-serif;-webkit-f
   .eg-item .img-ph{width:100%;aspect-ratio:3/4;}
   .cam-vf-area .img-ph{width:100%;height:220px;}
   .board-card-img .img-ph{width:100%;height:100%;}
-  .echo-ph{width:72px;height:90px;border-radius:9px;background:linear-gradient(145deg,#EFEFEF,#E0E0E0);}
-  .pol-ph{width:100%;aspect-ratio:3/4;border-radius:1px;background:linear-gradient(145deg,#EFEFEF,#E0E0E0);}
+  .echo-ph{width:72px;height:90px;border-radius:9px;background:linear-gradient(145deg,#F1F1F1,#DADADA);}
+  .pol-ph{width:100%;aspect-ratio:3/4;border-radius:1px;background:linear-gradient(145deg,#F1F1F1,#DADADA);}
   .cat-icon{display:none;}
 
 /* connected demo refinements */
@@ -347,7 +347,7 @@ html,body{height:100%;background:#1A1916;font-family:'Jost',sans-serif;-webkit-f
 .home-friends-head h2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:#1A1916;}
 .home-friends-head span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#8A8278;}
 .social-trace{max-width:360px;margin:0 auto;padding:0 0 52px;}
-.social-photo{width:82%;aspect-ratio:3/4;margin:0 auto;border-radius:10px;background-size:cover;background-position:center;cursor:pointer;}
+.social-photo{width:82%;aspect-ratio:3/4;margin:0 auto;border-radius:10px;background:linear-gradient(145deg,#D6D6D6 0 38%,#EFEFEF 38% 67%,#8D8D8D 67%)!important;background-size:cover;background-position:center;cursor:pointer;}
 .social-meta{display:flex;width:82%;margin:0 auto;justify-content:space-between;align-items:flex-start;padding:13px 1px 8px;gap:14px;}
 .social-name{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:#1A1916;line-height:1;}
 .social-caption{font-size:12px;color:#5A5549;margin-top:4px;}
@@ -379,10 +379,10 @@ html,body{height:100%;background:#1A1916;font-family:'Jost',sans-serif;-webkit-f
 .board-card{border:1px solid #DDD8D0;border-radius:2px;padding:6px 6px 14px;background:#fff;box-shadow:0 4px 14px -8px rgba(26,25,22,.32);transform:rotate(-.8deg);}
 .board-card:nth-child(even){transform:rotate(.8deg);}
 .board-card-img{height:auto;aspect-ratio:4/3;border:1px solid #E8E4DE;}
-.board-card-img .img-ph{background:linear-gradient(135deg,#E9E4DC 0 48%,#D7CEC1 48% 52%,#F4F1EC 52% 100%)!important;}
-.board-card:nth-child(2) .board-card-img .img-ph{background:linear-gradient(150deg,#D9D6D0 0 43%,#AFA99E 43% 47%,#EEEAE4 47% 100%)!important;}
-.board-card:nth-child(3) .board-card-img .img-ph{background:linear-gradient(125deg,#C8C1B7 0 35%,#EEEAE4 35% 65%,#8D877E 65%)!important;}
-.board-card:nth-child(4) .board-card-img .img-ph{background:linear-gradient(145deg,#F2EEE8 0 38%,#B9AFA2 38% 61%,#DCD5CB 61%)!important;}
+.board-card-img .img-ph{background:linear-gradient(135deg,#EEEEEE 0 48%,#D8D8D8 48% 52%,#F7F7F7 52% 100%)!important;}
+.board-card:nth-child(2) .board-card-img .img-ph{background:linear-gradient(150deg,#E4E4E4 0 43%,#BEBEBE 43% 47%,#F1F1F1 47% 100%)!important;}
+.board-card:nth-child(3) .board-card-img .img-ph{background:linear-gradient(125deg,#D3D3D3 0 35%,#F0F0F0 35% 65%,#929292 65%)!important;}
+.board-card:nth-child(4) .board-card-img .img-ph{background:linear-gradient(145deg,#F4F4F4 0 38%,#C7C7C7 38% 61%,#E4E4E4 61%)!important;}
 .board-card-info{padding:9px 4px 0;}
 .board-name{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;}
 .pgrid{display:block;}
@@ -398,6 +398,10 @@ html,body{height:100%;background:#1A1916;font-family:'Jost',sans-serif;-webkit-f
 .pol:nth-child(2n){--tilt:.8deg}.pol:nth-child(3n){--tilt:-1.1deg}
 .pol:active{transform:rotate(0deg) scale(.985);box-shadow:0 4px 12px -10px rgba(26,25,22,.5);}
 .pol-ph{aspect-ratio:3/4;background-color:#F2F0EC;border:1px solid #E8E4DE;}
+.pol.empty{box-shadow:none;border-color:#E5E5E5;background:#F7F7F7;opacity:1;cursor:default;}
+.pol.empty:active{transform:rotate(var(--tilt,-.7deg));box-shadow:none;}
+.pol.empty .pol-ph{background:#EDEDED;border-color:#E2E2E2;}
+.pol.empty .pol-date,.pol.empty .pol-number{color:#B8B8B8;}
 .pol-meta{display:flex;align-items:flex-end;justify-content:space-between;gap:3px;padding:6px 1px 0;}
 .pol-copy{min-width:0;}
 .pol-date{font-size:7px;letter-spacing:.07em;text-transform:uppercase;color:#A69D91;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -426,7 +430,7 @@ html,body{height:100%;background:#1A1916;font-family:'Jost',sans-serif;-webkit-f
 .timeline-chip{flex-shrink:0;border:1px solid #E0D8CB;background:#fff;border-radius:999px;padding:6px 10px;font-size:9px;color:#6F675C;letter-spacing:.06em;cursor:pointer;}
 .timeline-chip.on{background:#1A1916;border-color:#1A1916;color:#fff;}
 .wear-again{display:grid;grid-template-columns:82px 1fr;gap:12px;align-items:center;}
-.wear-photo{aspect-ratio:3/4;border:1px solid #E8E4DE;background:linear-gradient(150deg,#EFECE7 0 42%,#C9C1B6 42% 58%,#F8F6F2 58%);background-size:cover;background-position:center;}
+.wear-photo{aspect-ratio:3/4;border:1px solid #E8E4DE;background:linear-gradient(150deg,#EEEEEE 0 42%,#CFCFCF 42% 58%,#F7F7F7 58%);background-size:cover;background-position:center;}
 .echo-explain{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 22px 16px;}
 .echo-note{border:1px solid #E8E4DE;border-radius:10px;padding:11px;background:#FAF9F7;}
 .echo-note p:first-child{font-family:'Cormorant Garamond',serif;font-size:16px;color:#1A1916;margin-bottom:4px;}
@@ -476,7 +480,7 @@ html,body{height:100%;background:#1A1916;font-family:'Jost',sans-serif;-webkit-f
 </div>
 
 <!--  HOME  -->
-<div class="screen vis" id="s-home">
+<div class="screen" id="s-home">
   <div class="sbar"><span>9:41</span><span data-current-date>22 June</span></div>
   <div class="ah"><span class="logo">outft.</span><div style="display:flex;gap:13px;">
     <button class="hbtn" data-go="messages"><svg class="ic" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></button>
@@ -875,7 +879,7 @@ html,body{height:100%;background:#1A1916;font-family:'Jost',sans-serif;-webkit-f
             <button class="timeline-chip" data-timeline-filter="aesthetic">aesthetic</button>
           </div>
           <div style="display:flex;gap:6px;">
-            <span class="rp on" data-rp="weeks" style="font-size:10px;padding:5px 11px;border-radius:999px;background:#1A1916;color:#fff;cursor:pointer;">weeks</span>
+            <span class="rp on" data-rp="weeks" style="font-size:10px;padding:5px 11px;border-radius:999px;background:#1A1916;color:#fff;cursor:pointer;">occasions</span>
             <span class="rp" data-rp="months" style="font-size:10px;padding:5px 11px;border-radius:999px;border:1px solid #E0D8CB;color:#8A8278;cursor:pointer;">months</span>
             <span class="rp" data-rp="years" style="font-size:10px;padding:5px 11px;border-radius:999px;border:1px solid #E0D8CB;color:#8A8278;cursor:pointer;">years</span>
           </div>
@@ -2239,7 +2243,7 @@ function renderAppState(){
   var premiumButton=document.querySelector('[data-action="subscribe"]');
   if(premiumButton&&APP_STATE.isPremium){ premiumButton.textContent='premium active'; premiumButton.disabled=true; }
   var wearPhoto=document.getElementById('wear-again-photo');
-  if(wearPhoto&&POSTS[8]) wearPhoto.style.background=POSTS[8]._tone||'linear-gradient(150deg,#EFECE7 0 42%,#C9C1B6 42% 58%,#F8F6F2 58%)';
+  if(wearPhoto&&POSTS[8]) wearPhoto.style.background=POSTS[8]._tone||'linear-gradient(150deg,#EEEEEE 0 42%,#CFCFCF 42% 58%,#F7F7F7 58%)';
   if(!latest) return;
   applyPhotoToPlaceholder(document.getElementById('home-hero'),latest.photo);
   applyPhotoToPlaceholder(document.getElementById('prof-hero'),latest.photo);
@@ -2322,15 +2326,48 @@ function pol(idx,faded){
   var dateLabel=post._jsDate ? post._jsDate.toLocaleDateString('en-US',{month:'short',day:'numeric'}) : 'archive';
   var caption=post.caption||'daily trace';
   var traceTones=[
-    'linear-gradient(150deg,#E8E3DB 0 46%,#B8AEA1 46% 54%,#F4F1EC 54%)',
-    'linear-gradient(135deg,#CDC7BE 0 38%,#EEEAE4 38% 67%,#918B82 67%)',
-    'linear-gradient(155deg,#F1EDE7 0 35%,#AAA196 35% 58%,#D9D2C8 58%)',
-    'linear-gradient(125deg,#BDB5AA 0 42%,#E9E4DC 42% 72%,#77736D 72%)'
+    'linear-gradient(150deg,#E8E8E8 0 46%,#BDBDBD 46% 54%,#F5F5F5 54%)',
+    'linear-gradient(135deg,#CFCFCF 0 38%,#EFEFEF 38% 67%,#8F8F8F 67%)',
+    'linear-gradient(155deg,#F2F2F2 0 35%,#B6B6B6 35% 58%,#E0E0E0 58%)',
+    'linear-gradient(125deg,#C7C7C7 0 42%,#ECECEC 42% 72%,#838383 72%)'
   ];
   var latestPhoto=(typeof APP_STATE!=='undefined'&&APP_STATE.latestOutfit&&idx===0)?APP_STATE.latestOutfit.photo:null;
   var photoStyle=latestPhoto?'background-image:url(\''+latestPhoto+'\');background-size:cover;background-position:center;':'background:'+traceTones[idx%traceTones.length]+';';
   p.innerHTML='<div class="pol-ph" style="'+photoStyle+'"></div><div class="pol-meta"><div class="pol-copy"><p class="pol-date">'+dateLabel+' · '+((post.tags&&post.tags[0])||'daily')+'</p><p class="pol-caption">'+caption+'</p></div><span class="pol-number">No. '+String(idx+1).padStart(2,'0')+'</span></div>';
   return p;
+}
+
+function emptyPol(slot){
+  var p=document.createElement('div');
+  p.className='pol empty';
+  p.setAttribute('aria-label','Empty outfit slot');
+  p.innerHTML='<div class="pol-ph"></div><div class="pol-meta"><div class="pol-copy"><p class="pol-date">not filled</p></div><span class="pol-number">No. '+String(slot).padStart(2,'0')+'</span></div>';
+  return p;
+}
+
+function postMatchesOccasion(post, occasion){
+  var haystack=((post.caption||'')+' '+(post.tags||[]).join(' ')).toLowerCase();
+  return occasion.keys.some(function(key){ return haystack.indexOf(key)!==-1; });
+}
+
+function occasionSection(occasion, startSlot){
+  var indices=[];
+  POSTS.forEach(function(post,idx){
+    if(indices.length<4&&postMatchesOccasion(post,occasion)) indices.push(idx);
+  });
+  var sec=document.createElement('div');
+  sec.className='archive-group';
+  var hdr=document.createElement('div');
+  hdr.className='archive-group-head';
+  hdr.innerHTML='<h3 class="archive-group-date">'+occasion.label+'</h3><span class="archive-group-count">'+indices.length+' of 4 filled</span>';
+  sec.appendChild(hdr);
+  var grid=document.createElement('div');
+  grid.className='archive-contact-sheet';
+  for(var i=0;i<4;i++){
+    grid.appendChild(indices[i]!==undefined?pol(indices[i],false):emptyPol(startSlot+i));
+  }
+  sec.appendChild(grid);
+  return sec;
 }
 
 function weekSection(label, dayItems){
@@ -2358,44 +2395,23 @@ function buildBacklog(mode){
   bg.appendChild(intro);
 
   if(mode==='weeks'){
-    if(note) note.textContent='87 fits traced';
-    var dayAbbrs=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    // Group post indices by their real calendar date (so multiple fits on
-    // the same real day land under the same day label).
-    var dayGroups={}; // key: 'Y-M-D' -> {label, indices:[]}
-    POSTS.forEach(function(p, idx){
-      if(!p._jsDate) return;
-      var d=p._jsDate;
-      var key=d.getFullYear()+'-'+d.getMonth()+'-'+d.getDate();
-      if(!dayGroups[key]){
-        dayGroups[key]={ y:d.getFullYear(), m:d.getMonth(), day:d.getDate(), dow:dayAbbrs[d.getDay()], indices:[] };
-      }
-      dayGroups[key].indices.push(idx);
-    });
-    var orderedDayKeys=Object.keys(dayGroups).sort(function(a,b){
-      var ga=dayGroups[a], gb=dayGroups[b];
-      return (gb.y*372+gb.m*31+gb.day)-(ga.y*372+ga.m*31+ga.day);
-    });
-    // Only show the most recent 7 days that actually have fits
-    var recentKeys=orderedDayKeys.slice(0,7);
-    recentKeys.forEach(function(key){
-      var g=dayGroups[key];
-      var dayLabel=g.dow+' '+g.day;
-      var dayBlock=document.createElement('div'); dayBlock.className='archive-group';
-      var label=document.createElement('div'); label.className='archive-group-head';
-      label.innerHTML='<h3 class="archive-group-date">'+dayLabel+'</h3><span class="archive-group-count">'+g.indices.length+' trace'+(g.indices.length>1?'s':'')+'</span>';
-      dayBlock.appendChild(label);
-      var grid=document.createElement('div'); grid.className='archive-contact-sheet';
-      g.indices.forEach(function(idx){
-        grid.appendChild(pol(idx,false));
-      });
-      dayBlock.appendChild(grid);
-      bg.appendChild(dayBlock);
+    if(note) note.textContent='occasion rows · 87 fits traced';
+    var occasions=[
+      {label:'Daily',keys:['daily','sunday','tuesday','everyday']},
+      {label:'Night out',keys:['night out','dinner','monochrome']},
+      {label:'Work',keys:['work','office','blazer']},
+      {label:'Gym',keys:['gym','active']},
+      {label:'Date',keys:['date','silk','soft day']},
+      {label:'Travel',keys:['travel','airport','trip']},
+      {label:'Event',keys:['event','occasion','party']}
+    ];
+    occasions.forEach(function(occasion,index){
+      bg.appendChild(occasionSection(occasion,index*4+1));
     });
     var lock=document.createElement('div');
     lock.className='archive-lock';
     lock.setAttribute('data-go','premium');
-    lock.innerHTML='<svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:#B5ADA3;fill:none;stroke-width:1.5;stroke-linecap:round;"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg><p style="font-size:11px;color:#B5ADA3;letter-spacing:.04em;">view older weeks</p>';
+    lock.innerHTML='<svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:#B5ADA3;fill:none;stroke-width:1.5;stroke-linecap:round;"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg><p style="font-size:11px;color:#B5ADA3;letter-spacing:.04em;">unlock more occasion rows</p>';
     bg.appendChild(lock);
 
   } else if(mode==='months'){
@@ -2442,15 +2458,15 @@ function buildBacklog(mode){
       }
       var grid=document.createElement('div');
       grid.className='archive-contact-sheet';
-      var showCount=Math.min(6, g.indices.length);
+      var showCount=Math.min(12, g.indices.length);
       for(var f=0;f<showCount;f++){
         var p=pol(g.indices[f], false);
         grid.appendChild(p);
       }
-      if(g.indices.length>6){
+      if(g.indices.length>12){
         var more=document.createElement('div');
         more.className='archive-more';
-        more.innerHTML='<span style="font-size:10px;color:#B5ADA3;letter-spacing:.06em;text-align:center;">+'+(g.indices.length-6)+'<br>more</span>';
+        more.innerHTML='<span style="font-size:10px;color:#B5ADA3;letter-spacing:.06em;text-align:center;">+'+(g.indices.length-12)+'<br>more</span>';
         (function(label,count,indices){ more.addEventListener('click',function(){ openMonthDetailByIndices(label,count,indices); }); })(g.label,g.indices.length,g.indices);
         grid.appendChild(more);
       }
@@ -2467,7 +2483,7 @@ function buildBacklog(mode){
     bg.appendChild(yHdr);
     var grid2026=document.createElement('div');
     grid2026.className='archive-contact-sheet';
-    for(var f=0;f<6;f++){ grid2026.appendChild(pol(f,false)); }
+    for(var f=0;f<24;f++){ grid2026.appendChild(pol(f,false)); }
     bg.appendChild(grid2026);
     // 2025 — premium locked
     var lock=document.createElement('div');
@@ -2718,6 +2734,11 @@ function updateTraceTimeline(value){
   var note=document.getElementById('bl-note');
   if(label) label.textContent=TRACE_MONTHS[idx];
   if(note){
+    var activeMode=document.querySelector('.rp.on');
+    if(activeMode&&activeMode.getAttribute('data-rp')==='weeks'){
+      note.textContent='occasion rows · 87 fits traced';
+      return;
+    }
     var active=document.querySelector('.timeline-chip.on');
     var filter=active?active.textContent:'all';
     note.textContent=TRACE_MONTHS[idx]+' traces · '+filter;
